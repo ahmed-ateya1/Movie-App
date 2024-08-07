@@ -75,11 +75,6 @@ MovieApp is a web application built with ASP.NET Core that allows users to manag
 ## Screenshots
 
 
-## Contributing
-
-We welcome contributions! Please fork the repository and submit pull requests for any features, bug fixes, or improvements.
-
-## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
