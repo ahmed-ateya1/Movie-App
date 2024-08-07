@@ -1,0 +1,86 @@
+﻿@model MovieAddRequest
+@{
+    ViewBag.Title = "Create";
+}
+<h2 class="display-4">Create Movie</h2>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" asp-controller="Movie" method="post" enctype="multipart/form-data">
+            <div class="form-group mt-2 w-75">
+                <label asp-for="Title" class="form-label font-monospace">Title:</label>
+                <input asp-for="Title" class="form-control" maxlength="100" required />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2 w-75">
+                <label asp-for="GenreID" class="form-label font-monospace">Genre: </label>
+                <select asp-for="GenreID" asp-items="ViewBag.Genres" class="form-select" required>
+                    <option value="">--Select Genre--</option>
+                </select>
+                <span asp-validation-for="GenreID" class="text-danger"></span>
+            </div>
+            <div class="form-group w-50 mt-2">
+                <label asp-for="ReleaseDate" class="form-label font-monospace" class="form-label">Release Date: </label>
+                <input asp-for="ReleaseDate" class="form-control" />
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2 w-25">
+                <label asp-for="Rating" class="form-label font-monospace">Rate: </label>
+                <input asp-for="Rating" class="form-control" min="1" max="10" />
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+            <div class="form-floating w-75 mt-2">
+                <textarea asp-for="Description" class="form-control" placeholder="Leave a StoryLine Here" id="floatingTextarea2" style="height: 100px" maxlength="1000"></textarea>
+                <label asp-for="Description" for="floatingTextarea2">StoryLine</label>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="mb-3 mt-2 w-75">
+                <label asp-for="Poster" class="form-label">Choose Image</label>
+                <input asp-for="Poster" type="file" class="form-control" id="imageInput" accept=".png,.jpg" />
+                <span asp-validation-for="Poster" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-2">
+                <i class="bi bi-check"></i>
+                Save
+            </button>
+            <a asp-action="Index" class="btn btn-outline-warning mt-2">
+                <i class="bi bi-x"></i>
+                Cancel
+            </a>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <div id="posterImg" class="d-none">
+            <img src="" alt="Poster Image" class="img-thumbnail" id="posterImage">
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"></partial>
+    <script>
+        $(document).ready(function () {
+            $('#imageInput').on('change', function () {
+                var file = this.files[0];
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#posterImg').removeClass('d-none');
+                    $('#posterImage').attr('src', e.target.result);
+                    $('#imageValidation').text('');
+                }
+
+                reader.readAsDataURL(file);
+            });
+            $('#Year').datepicker({
+                format: 'yyyy',
+                viewMode: 'years',
+                minViewMode: 'years',
+                autoclose: true,
+                startDate: new Date('1950-01-01'),
+                endDate: new Date()
+            });
+        });
+    </script>
+}

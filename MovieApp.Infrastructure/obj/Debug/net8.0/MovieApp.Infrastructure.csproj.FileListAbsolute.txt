@@ -1,0 +1,17 @@
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\obj\Debug\net8.0\MovieApp.Infrastructure.csproj.AssemblyReference.cache
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\obj\Debug\net8.0\MovieApp.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\obj\Debug\net8.0\MovieApp.Infrastructure.AssemblyInfoInputs.cache
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\obj\Debug\net8.0\MovieApp.Infrastructure.AssemblyInfo.cs
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\obj\Debug\net8.0\MovieApp.Infrastructure.csproj.CoreCompileInputs.cache
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\bin\Debug\net8.0\MovieApp.Infrastructure.deps.json
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\bin\Debug\net8.0\MovieApp.Infrastructure.runtimeconfig.json
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\bin\Debug\net8.0\MovieApp.Infrastructure.dll
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\bin\Debug\net8.0\MovieApp.Infrastructure.pdb
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\bin\Debug\net8.0\MovieApp.Core.dll
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\bin\Debug\net8.0\MovieApp.Core.pdb
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\obj\Debug\net8.0\MovieApp.6069B4E2.Up2Date
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\obj\Debug\net8.0\MovieApp.Infrastructure.dll
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\obj\Debug\net8.0\refint\MovieApp.Infrastructure.dll
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\obj\Debug\net8.0\MovieApp.Infrastructure.pdb
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\obj\Debug\net8.0\MovieApp.Infrastructure.genruntimeconfig.cache
+C:\.NET Project\MovieApp\MovieApp.Infrastructure\obj\Debug\net8.0\ref\MovieApp.Infrastructure.dll

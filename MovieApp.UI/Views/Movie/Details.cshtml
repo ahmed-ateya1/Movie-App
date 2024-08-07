@@ -1,0 +1,39 @@
+﻿@model MovieResponse
+@{
+    ViewData["Title"] = Model.Title;
+}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <a asp-action="Index" class="btn btn-primary">
+        <i class="bi bi-skip-backward-fill"></i>
+        Back
+    </a>
+</div>
+<div class="row justify-content-between mt-5">
+    <div class="col-md-3">
+        <img src="/Upload/@Model.ImageURL" class="img-thumbnail" alt="@Model.Title" />
+    </div>
+    <div class="col-md-7">
+        <div class="d-flex justify-content-between mb-3 align-items-center">
+            <h3 class="mb-0">@Model.Title</h3>
+            <span class="d-flex align-items-center">
+                <i class="bi bi-star-fill text-warning mr-1"></i>
+                <span class="text-muted">@Model.Rating?.ToString("0.0")</span>
+            </span>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+            <span class="text-muted mr-5">
+                <i class="bi bi-calendar-week"></i>
+                @Model.ReleaseDate?.ToString("yyyy")
+            </span>
+            <span class="text-muted mr-5">
+                <i class="bi bi-clock-history"></i>
+                @Model.ProducedSince Y
+            </span>
+            <span class="text-muted mr-5">
+                <i class="bi bi-film"></i>
+                @Model.GenreName
+            </span>
+        </div>
+        <p class="text-justify mt-3">@Model.Description</p>
+    </div>
+</div>

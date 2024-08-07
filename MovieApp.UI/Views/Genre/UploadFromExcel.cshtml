@@ -1,0 +1,271 @@
+﻿@{
+    ViewBag.Title = "Upload Countries from Excel";
+}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #f6f6f6;
+        color: #444;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        line-height: 1;
+    }
+
+    .container {
+        max-width: 1100px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+
+    .panel {
+        margin: 100px auto 40px;
+        max-width: 500px;
+        text-align: center;
+    }
+
+    .button_outer {
+        background: #83ccd3;
+        border-radius: 30px;
+        text-align: center;
+        height: 50px;
+        width: 200px;
+        display: inline-block;
+        transition: .2s;
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    .btn_upload {
+        padding: 17px 30px 12px;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        z-index: 3;
+        white-space: nowrap;
+    }
+
+        .btn_upload input {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            height: 105%;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+    .file_uploading {
+        width: 100%;
+        height: 10px;
+        margin-top: 20px;
+        background: #ccc;
+    }
+
+        .file_uploading .btn_upload {
+            display: none;
+        }
+
+    .processing_bar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        border-radius: 30px;
+        background: #83ccd3;
+        transition: 3s;
+    }
+
+    .file_uploading .processing_bar {
+        width: 100%;
+    }
+
+    .success_box {
+        display: none;
+        width: 50px;
+        height: 50px;
+        position: relative;
+    }
+
+        .success_box:before {
+            content: '';
+            display: block;
+            width: 9px;
+            height: 18px;
+            border-bottom: 6px solid #fff;
+            border-right: 6px solid #fff;
+            transform: rotate(45deg);
+            position: absolute;
+            left: 17px;
+            top: 10px;
+        }
+
+    .file_uploaded .success_box {
+        display: inline-block;
+    }
+
+    .file_uploaded {
+        margin-top: 0;
+        width: 50px;
+        background: #83ccd3;
+        height: 50px;
+    }
+
+    .uploaded_file_view {
+        max-width: 300px;
+        margin: 40px auto;
+        text-align: center;
+        position: relative;
+        transition: .2s;
+        opacity: 0;
+        border: 2px solid #ddd;
+        padding: 15px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .uploaded_file_name {
+        display: block;
+        margin-top: 10px;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .file_remove {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        background: #aaa;
+        line-height: 30px;
+        color: #fff;
+        font-size: 12px;
+        cursor: pointer;
+        right: -15px;
+        top: -15px;
+    }
+
+        .file_remove:hover {
+            background: #222;
+            transition: .2s;
+        }
+
+    .uploaded_file_view.show {
+        opacity: 1;
+    }
+
+    .error_msg {
+        text-align: center;
+        color: #f00;
+    }
+
+    .button {
+        background-color: #ff5c5c;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 40px; /* Adjusted padding for narrower button */
+        cursor: pointer;
+        transition: background-color 0.2s;
+        display: inline-block;
+        margin: 20px auto 0;
+    }
+
+
+        .button:hover {
+            background-color: #ff4040;
+        }
+
+    .text-red {
+        color: #ff0000;
+        margin-top: 10px;
+    }
+
+    .text-green {
+        color: #00a000;
+        margin-top: 10px;
+    }
+
+    .form-container {
+        background-color: #ffffff;
+        border-radius: 15px;
+        margin: auto;
+        width: 90%;
+        padding: 20px;
+    }
+</style>
+
+<div class="form-container">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <form asp-action="UploadFromExcel" asp-controller="Genre" method="post" enctype="multipart/form-data">
+        <main class="main_full">
+            <div class="container">
+                <div class="panel">
+                    <div class="button_outer">
+                        <div class="btn_upload">
+                            <input type="file" id="upload_file" name="excelFile" accept=".xls,.xlsx">
+                            Upload Excel File
+                        </div>
+                        <div class="processing_bar"></div>
+                        <div class="success_box"></div>
+                    </div>
+                </div>
+                <div class="error_msg"></div>
+                <div class="uploaded_file_view" id="uploaded_view">
+                    <span class="file_remove">X</span>
+                    <span class="uploaded_file_name" id="uploaded_file_name"></span>
+                </div>
+                <div class="form-field text-center">
+                    <button type="submit" class="button">Submit</button>
+                    <div class="text-danger">@ViewBag.ErrorMessage</div>
+                    <div class="text-green">@ViewBag.Message</div>
+                </div>
+            </div>
+        </main>
+    </form>
+</div>
+
+<script>
+    var btnUpload = $("#upload_file"),
+        btnOuter = $(".button_outer"),
+        uploadedView = $("#uploaded_view"),
+        uploadedFileName = $("#uploaded_file_name");
+
+    btnUpload.on("change", function (e) {
+        var ext = btnUpload.val().split('.').pop().toLowerCase();
+        if ($.inArray(ext, ['xls', 'xlsx']) == -1) {
+            $(".error_msg").text("Not an Excel file...");
+        } else {
+            $(".error_msg").text("");
+            btnOuter.addClass("file_uploading");
+            var fileName = e.target.files[0].name;
+            setTimeout(function () {
+                btnOuter.addClass("file_uploaded");
+                uploadedFileName.text(fileName);
+                uploadedView.addClass("show");
+            }, 3000);
+            setTimeout(function () {
+                $(".success_box").show();
+            }, 3500);
+        }
+    });
+
+    $(".file_remove").on("click", function (e) {
+        uploadedView.removeClass("show");
+        $(".success_box").hide();
+        btnOuter.removeClass("file_uploading");
+        btnOuter.removeClass("file_uploaded");
+        uploadedFileName.text(''); // Clear the file name
+        btnUpload.val(''); // Clear the file input
+    });
+</script>
