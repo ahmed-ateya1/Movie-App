@@ -79,12 +79,27 @@ MovieApp is a web application built with ASP.NET Core that allows users to manag
 ![Screenshot 2024-08-07 143955](https://github.com/user-attachments/assets/cb04c867-d8d6-4b1d-a106-1203e30761fc)
 - **Login Page**
 ![image](https://github.com/user-attachments/assets/9089eb5a-7867-4cb0-90b0-e1ba1aab740e)
+-**Admin View**
+  ![image](https://github.com/user-attachments/assets/6a77d3b0-c46f-4e75-aef5-44862080051a)
 - **Admin Dashboard**
   ![image](https://github.com/user-attachments/assets/0281cc68-5745-4a8b-8063-d57b169080a9)
 - **Import Genre Type from Excel File**
   ![image](https://github.com/user-attachments/assets/08621482-0bfe-4eca-90e5-69da81ef6142)
 - **Add New User By Admin With his own role**
      ![image](https://github.com/user-attachments/assets/7a5a28b6-40c1-40d0-91c1-3d5e8d4f1894)
+- **Create New Movie By Admin**
+  ![image](https://github.com/user-attachments/assets/c353adf7-fc4a-4384-a6d5-f38de32b51ed)
+- **Edit Existing Movie By Admin**
+![image](https://github.com/user-attachments/assets/c774ede1-a306-4365-9a70-6031e6526938)
+- **User View**
+  ![image](https://github.com/user-attachments/assets/543e2a69-09ef-42cc-9551-3ce44249f901)
+- **Favourite Page for User**
+  ![image](https://github.com/user-attachments/assets/629bc355-6474-47f2-be6c-0bc7cf3b926f)
+- **Details For Movie**
+  ![image](https://github.com/user-attachments/assets/e21cdb53-6bb5-4845-8809-d6306eac3040)
+
+
+
 
 
 
