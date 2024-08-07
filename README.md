@@ -24,3 +24,26 @@ The project is divided into three main layers:
    ```sh
    git clone https://github.com/yourusername/MovieApp.git
    cd MovieApp
+   ```
+
+2. **Setup Database**
+
+   Configure your database connection string in `appsettings.json` and run the following command to apply migrations:
+
+   ```sh
+   dotnet ef database update
+   ```
+
+3. **Run the Application**
+
+   ```sh
+   dotnet run
+   ```
+
+4. **Access the Application**
+
+   Open your browser and navigate to `http://localhost:5000`.
+
+## Contributing
+
+We welcome contributions! Please fork the repository and submit pull requests for any features, bug fixes, or improvements.
