@@ -73,11 +73,11 @@ MovieApp is a web application built with ASP.NET Core that allows users to manag
 - **Export Data:** Import Genre lists from Excel formats.
 
 ## Screenshots
-- **UnAuthentication View
+- **UnAuthentication View**
 ![Screenshot 2024-08-07 143801](https://github.com/user-attachments/assets/35915166-aa2b-4c11-a281-80aefa8ad940)
-- **Register Page
+- **Register Page**
 ![Screenshot 2024-08-07 143955](https://github.com/user-attachments/assets/cb04c867-d8d6-4b1d-a106-1203e30761fc)
-- **Login Page
+- **Login Page**
 ![image](https://github.com/user-attachments/assets/9089eb5a-7867-4cb0-90b0-e1ba1aab740e)
 
 
