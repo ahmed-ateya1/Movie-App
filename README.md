@@ -1,7 +1,3 @@
-Here's an improved and polished README for your MovieApp project, with corrected spelling and refined descriptions related to the screenshots:
-
----
-
 # MovieApp
 
 MovieApp is a web application built with ASP.NET Core that allows users to manage their movie collection and favorite lists. The application provides features for managing movies, genres, and user-specific favorite lists, along with a responsive user interface.
