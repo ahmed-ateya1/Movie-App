@@ -70,7 +70,7 @@ MovieApp is a web application built with ASP.NET Core that allows users to manag
   - **Create a new favorite list:** Go to the favorites section and click on the "Create Favorite List" button.
   - **Add movies to favorites:** Open a favorite list and click on the "Add Movie" button.
   - **Remove movies from favorites:** Click on the "Remove" button next to a movie in the favorite list.
-- **Export Data:** Import Genre lists from Excel formats.
+- **Import Data:** Import Genre lists from Excel formats.
 
 ## Screenshots
 - **UnAuthentication View**
@@ -79,6 +79,12 @@ MovieApp is a web application built with ASP.NET Core that allows users to manag
 ![Screenshot 2024-08-07 143955](https://github.com/user-attachments/assets/cb04c867-d8d6-4b1d-a106-1203e30761fc)
 - **Login Page**
 ![image](https://github.com/user-attachments/assets/9089eb5a-7867-4cb0-90b0-e1ba1aab740e)
+- **Admin Dashboard**
+  ![image](https://github.com/user-attachments/assets/0281cc68-5745-4a8b-8063-d57b169080a9)
+- **Import Genre Type from Excel File**
+  ![image](https://github.com/user-attachments/assets/08621482-0bfe-4eca-90e5-69da81ef6142)
+- **Add New User By Admin With his own role**
+     ![image](https://github.com/user-attachments/assets/7a5a28b6-40c1-40d0-91c1-3d5e8d4f1894)
 
 
 
