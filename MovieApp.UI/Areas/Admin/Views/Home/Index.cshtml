@@ -1,9 +1,21 @@
-﻿@using MovieApp.UI.Areas.Admin.Data
+﻿@using Microsoft.AspNetCore.Identity
+@using MovieApp.Core.Domain.IdentityEntites
+@using MovieApp.UI.Areas.Admin.Data
+@inject UserManager<ApplicationUser> _userManager
 @model IEnumerable<AdminViewModel>
 
 @{
     ViewData["Title"] = "Dashboard";
     Layout = "_Layout";
+
+    async Task<string> ReturnRole(Guid userId)
+    {
+        var user = await _userManager.FindByIdAsync(userId.ToString());
+        if (user == null)
+            return "NoRole";
+        var roles = await _userManager.GetRolesAsync(user);
+        return roles.FirstOrDefault() ?? "No Role";
+    }
 }
 
 <h2>Admin Dashboard</h2>
@@ -26,6 +38,7 @@
             <th>Email</th>
             <th>Phone Number</th>
             <th>Number of Favorite Movies</th>
+            <th>Role</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -37,6 +50,9 @@
                 <td>@user.Email</td>
                 <td>@user.PhoneNumber</td>
                 <td>@user.FavoriteMoviesCount</td>
+                <td>
+                    @await ReturnRole(user.UserID)
+                </td>
                 <td>
                     <form asp-action="RemoveUser" asp-controller="Home" asp-area="Admin" method="get" onsubmit="return confirm('Are you sure you want to delete this user?');">
                         <input type="hidden" name="userID" value="@user.UserID" />

@@ -268,3 +268,4 @@ C:\.NET Project\MovieApp\MovieApp.UI\bin\Debug\net8.0\Microsoft.Extensions.Optio
 C:\.NET Project\MovieApp\MovieApp.UI\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\.NET Project\MovieApp\MovieApp.UI\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\.NET Project\MovieApp\MovieApp.UI\obj\Debug\net8.0\MovieApp.UI.MvcApplicationPartsAssemblyInfo.cs
+C:\.NET Project\MovieApp\MovieApp.UI\obj\Debug\net8.0\MovieApp.UI.sourcelink.json
